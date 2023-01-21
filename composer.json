@@ -2,6 +2,7 @@
     "name": "baptouuuu/rss-proxy",
     "type": "project",
     "require": {
+        "php": "8.1",
         "innmind/framework": "~1.0",
         "innmind/xml": "~7.3",
         "innmind/immutable": "~4.9"
