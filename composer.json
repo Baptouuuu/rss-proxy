@@ -2,7 +2,9 @@
     "name": "baptouuuu/rss-proxy",
     "type": "project",
     "require": {
-        "innmind/framework": "~1.0"
+        "innmind/framework": "~1.0",
+        "innmind/xml": "~7.3",
+        "innmind/immutable": "~4.9"
     },
     "require-dev": {
         "vimeo/psalm": "~5.4",

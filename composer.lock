@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb270a5145c1711260f967a976f26bf9",
+    "content-hash": "906c3b90fa67931efbf4ec5dddc1e21e",
     "packages": [
         {
             "name": "brick/math",
@@ -1592,6 +1592,58 @@
                 "source": "https://github.com/Innmind/UrlTemplate/tree/3.0.0"
             },
             "time": "2022-08-06T09:58:41+00:00"
+        },
+        {
+            "name": "innmind/xml",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Innmind/XML.git",
+                "reference": "9a61d142dfb11cea1777ad4cae895a4bcf6774bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Innmind/XML/zipball/9a61d142dfb11cea1777ad4cae895a4bcf6774bb",
+                "reference": "9a61d142dfb11cea1777ad4cae895a4bcf6774bb",
+                "shasum": ""
+            },
+            "require": {
+                "innmind/filesystem": "~5.1|~6.0",
+                "innmind/immutable": "^4.7.1",
+                "php": "~8.1"
+            },
+            "require-dev": {
+                "innmind/black-box": "^4.18",
+                "innmind/coding-standard": "~2.0",
+                "phpunit/phpunit": "~9.0",
+                "vimeo/psalm": "~4.22"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Innmind\\Xml\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Baptiste Langlade",
+                    "email": "baptiste.langlade@hey.com"
+                }
+            ],
+            "description": "Library to abstract xml manipulation",
+            "homepage": "http://github.com/Innmind/XML",
+            "keywords": [
+                "xml"
+            ],
+            "support": {
+                "issues": "http://github.com/Innmind/XML/issues",
+                "source": "https://github.com/Innmind/XML/tree/7.3.0"
+            },
+            "time": "2023-01-21T10:43:37+00:00"
         },
         {
             "name": "league/uri-components",
