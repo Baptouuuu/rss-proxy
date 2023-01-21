@@ -3,8 +3,10 @@ declare(strict_types = 1);
 
 namespace RssProxy\Command;
 
-use RssProxy\Filter;
-use Innmind\OperatingSystem\OperatingSystem;
+use RssProxy\{
+    Fetch,
+    Filter,
+};
 use Innmind\Filesystem\Chunk;
 use Innmind\Xml\{
     Reader,
@@ -14,12 +16,6 @@ use Innmind\CLI\{
     Console,
     Command,
 };
-use Innmind\Http\{
-    Message\Request\Request,
-    Message\Method,
-    ProtocolVersion,
-};
-use Innmind\Url\Url;
 use Innmind\Immutable\{
     Str,
     Predicate\Instance,
@@ -27,27 +23,20 @@ use Innmind\Immutable\{
 
 final class Test implements Command
 {
-    private OperatingSystem $os;
+    private Fetch $fetch;
     private Reader $read;
     private Filter $filter;
 
-    public function __construct(OperatingSystem $os, Reader $read, Filter $filter)
+    public function __construct(Fetch $fetch, Reader $read, Filter $filter)
     {
-        $this->os = $os;
+        $this->fetch = $fetch;
         $this->read = $read;
         $this->filter = $filter;
     }
 
     public function __invoke(Console $console): Console
     {
-        $fetch = $this->os->remote()->http();
-
-        return $fetch(new Request(
-            Url::of('https://www.theatlantic.com/feed/all/'),
-            Method::get,
-            ProtocolVersion::v20,
-        ))
-            ->maybe()
+        return ($this->fetch)()
             ->map(static fn($success) => $success->response()->body())
             ->flatMap(fn($content) => ($this->read)($content))
             ->keep(Instance::of(Document::class))
