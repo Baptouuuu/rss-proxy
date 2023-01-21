@@ -1,0 +1,23 @@
+{
+    "name": "baptouuuu/rss-proxy",
+    "type": "project",
+    "require": {
+        "innmind/framework": "~1.0"
+    },
+    "require-dev": {
+        "vimeo/psalm": "~5.4",
+        "innmind/coding-standard": "~2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RssProxy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Baptiste Langlade",
+            "email": "baptiste.langlade@hey.com"
+        }
+    ]
+}
